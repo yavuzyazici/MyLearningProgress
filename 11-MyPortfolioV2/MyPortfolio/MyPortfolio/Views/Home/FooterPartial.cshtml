@@ -1,0 +1,26 @@
+﻿@model MyPortfolio.Models.Footer
+
+<footer class="main-footer">
+    <div class="main-container">
+        <div class="main-footer__upper">
+            <div class="main-footer__row main-footer__row-1">
+                <h2 class="heading heading-sm main-footer__heading-sm">
+                    <span>Sosyal Medyalar</span>
+                </h2>
+                @Html.Action("FooterSocialPartial", "Home")
+            </div>
+            <div class="main-footer__row main-footer__row-2">
+                <h4 class="heading heading-sm text-lt">@Model.Title</h4>
+                <p class="main-footer__short-desc">
+                    @Model.Description
+                </p>
+            </div>
+        </div>
+
+        <!-- If you give me some credit or shoutout here by linking to my website, then it will be a big thing for me and will help me a lot :) -->
+        <div class="main-footer__lower">
+            &copy; Copyright @DateTime.Now.Year. Made by
+            <a target="_blank" href="https://www.yavuzyazici.com">Yavuz Yazıcı</a>
+        </div>
+    </div>
+</footer>

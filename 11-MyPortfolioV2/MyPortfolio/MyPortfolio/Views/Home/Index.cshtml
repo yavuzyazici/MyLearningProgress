@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    @Html.Action("MetaPartial", "Home")
+
+    <link rel="stylesheet" href="/wwwroot/uiweb/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+          rel="stylesheet" />
+    <style>
+        .logo-text {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 800;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(270deg, #0d47a1, #1565c0, #1976d2, #1e88e5, #42a5f5);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientFlow 8s ease infinite;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+@@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header__content">
+            <div class="header__logo-text" style="text-align: center; padding: 20px 0;">
+                <h1 class="logo-text">Yavuz Yazıcı</h1>
+            </div>
+
+
+            <div class="header__main">
+                <ul class="header__links">
+                    <li class="header__link-wrapper">
+                        <a href="https://www.yavuzyazici.com" class="header__link"> Ana Sayfa </a>
+                    </li>
+                    <li class="header__link-wrapper">
+                        <a href="#about" class="header__link">Hakkımda </a>
+                    </li>
+                    <li class="header__link-wrapper">
+                        <a href="#projects" class="header__link">
+                            Projelerim
+                        </a>
+                    </li>
+                    <li class="header__link-wrapper">
+                        <a href="#contact" class="header__link"> İletişim </a>
+                    </li>
+                </ul>
+                <div class="header__main-ham-menu-cont">
+                    <img src="/wwwroot/uiweb/assets/svg/ham-menu.svg"
+                         alt="hamburger menu"
+                         class="header__main-ham-menu" />
+                    <img src="/wwwroot/uiweb/assets/svg/ham-menu-close.svg"
+                         alt="hamburger menu close"
+                         class="header__main-ham-menu-close d-none" />
+                </div>
+            </div>
+        </div>
+        <div class="header__sm-menu">
+            <div class="header__sm-menu-content">
+                <ul class="header__sm-menu-links">
+                    <li class="header__sm-menu-link">
+                        <a href="https://www.yavuzyazici.com"> Ana Sayfa </a>
+                    </li>
+
+                    <li class="header__sm-menu-link">
+                        <a href="#about"> Hakkımızda </a>
+                    </li>
+
+                    <li class="header__sm-menu-link">
+                        <a href="#projects"> Projelerim </a>
+                    </li>
+
+                    <li class="header__sm-menu-link">
+                        <a href="#contact"> İletişim </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    @Html.Action("BannerPartial", "Home")
+
+    @Html.Action("AboutPartial", "Home")
+
+    @Html.Action("ProjectsPartial", "Home")
+
+    @Html.Action("ContactPartial", "Home")
+
+    @Html.Action("FooterPartial", "Home")
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $("#contactForm").on("submit", function (e) {
+            e.preventDefault(); // sayfa yenilenmesini engelle
+
+            $.ajax({
+                url: $(this).attr("action"),
+                type: "POST",
+                data: $(this).serialize(), // form verilerini gönder
+                success: function (result) {
+                    $("#formResult").html("<p style='color:green;font-weight:bold'>Mesajınız başarıyla gönderildi ✅</p>");
+                    $("#contactForm")[0].reset(); // formu temizle
+                },
+                error: function () {
+                    $("#formResult").html("<p style='color:red;font-weight:bold'>Bir hata oluştu ❌</p>");
+                }
+            });
+        });
+    </script>
+    <script src="/wwwroot/uiweb/index.js"></script>
+</body>
+</html>

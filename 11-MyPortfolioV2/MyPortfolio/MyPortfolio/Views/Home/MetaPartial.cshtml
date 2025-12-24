@@ -1,0 +1,29 @@
+﻿@model MyPortfolio.Models.Meta
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>@Model.Title</title>
+<meta name="description" content="@Model.Description" />
+
+<meta name="keywords" content="yavuz yazıcı, yavuz yazici, Yavuz Selim Yazıcı, Yavuz Selim Yazici, yavuz selim yazici, selim yazıcı, selim yazici">
+<meta name="author" content="Yavuz Selim Yazıcı">
+
+<meta property="og:title" content="@Model.Title">
+<meta property="og:url" content="@Request.Url.AbsoluteUri">
+<meta property="og:image" content="@Model.OgUrl">
+<meta property="og:image:alt" content="@Model.Title">
+<meta property="og:description" content="@Model.Description">
+
+
+<meta name="DC.title" content="@Model.Title" />
+<meta name="DC.description" content="@Model.Description" />
+<meta name="DC.language" content="tr" />
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="@Model.Title">
+<meta name="twitter:description" content="@Model.Description">
+<meta name="twitter:image" content="@Model.OgUrl">
+<meta name="twitter:image:alt" content="@Model.Title">
+
+<link rel="canonical" href="@Request.Url.AbsoluteUri" />

@@ -1,0 +1,49 @@
+﻿@model MyPortfolio.Models.Contact
+
+<section id="contact" class="contact sec-pad dynamicBg">
+    <div class="main-container">
+        <h2 class="heading heading-sec heading-sec__mb-med">
+            <span class="heading-sec__main heading-sec__main--lt">@Model.Title</span>
+            <span class="heading-sec__sub heading-sec__sub--lt">
+                @Model.Description
+            </span>
+        </h2>
+        <div class="contact__form-container">
+            <form id="contactForm" action="/Home/ContactPartial" method="post" class="contact__form">
+                <div class="contact__form-field">
+                    <label class="contact__form-label" for="name">Ad Soyad</label>
+                    <input required
+                           placeholder="Adınızı ve Soyadınızı Giriniz"
+                           type="text"
+                           class="contact__form-input"
+                           name="Name"
+                           id="name" />
+                </div>
+                <div class="contact__form-field">
+                    <label class="contact__form-label" for="email">E-Posta</label>
+                    <input required
+                           placeholder="E-posta adresinizi giriniz"
+                           type="email"
+                           class="contact__form-input"
+                           name="Email"
+                           id="email" />
+                </div>
+                <div class="contact__form-field">
+                    <label class="contact__form-label" for="message">Mesajınız</label>
+                    <textarea required
+                              cols="30"
+                              rows="10"
+                              class="contact__form-input"
+                              placeholder="Mesajınızı yazınız..."
+                              name="MessageText"
+                              id="message"></textarea>
+                </div>
+                <button type="submit" class="btn btn--theme contact__btn">
+                    Gönder
+                </button>
+            </form>
+
+            <div id="formResult"></div>
+        </div>
+    </div>
+</section>

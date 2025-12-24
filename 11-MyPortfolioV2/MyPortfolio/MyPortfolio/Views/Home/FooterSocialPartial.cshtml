@@ -1,0 +1,38 @@
+﻿@model MyPortfolio.Models.SocialMedia
+
+<div class="main-footer__social-cont">
+    @if (!string.IsNullOrEmpty(Model.LinkedInUrl))
+    {
+        <a target="_blank" rel="noreferrer" href="@Model.LinkedInUrl">
+            <img class="main-footer__icon"
+                 src="/wwwroot/uiweb/assets/png/linkedin-ico.png"
+                 alt="icon" />
+        </a>
+    }
+    @if (!string.IsNullOrEmpty(Model.GithubUrl))
+    {
+        <a target="_blank" rel="noreferrer" href="@Model.GithubUrl">
+            <img class="main-footer__icon"
+                 src="/wwwroot/uiweb/assets/png/github-ico.png"
+                 alt="icon" />
+        </a>
+    }
+    @if (!string.IsNullOrEmpty(Model.TwitterUrl))
+    {
+        <a target="_blank" rel="noreferrer" href="@Model.TwitterUrl">
+            <img class="main-footer__icon"
+                 src="/wwwroot/uiweb/assets/png/twitter-ico.png"
+                 alt="icon" />
+        </a>
+    }
+
+    @if (!string.IsNullOrEmpty(Model.YoutubeUrl))
+    {
+        <a target="_blank" rel="noreferrer" href="@Model.YoutubeUrl">
+            <img class="main-footer__icon"
+                 src="/wwwroot/uiweb/assets/png/yt-ico.png"
+                 alt="icon" />
+        </a>
+    }
+
+</div>

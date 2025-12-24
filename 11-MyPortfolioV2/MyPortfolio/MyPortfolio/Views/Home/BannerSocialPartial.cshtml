@@ -1,0 +1,47 @@
+﻿@model MyPortfolio.Models.SocialMedia
+
+<div class="home-hero__socials">
+
+    @if (!string.IsNullOrEmpty(Model.LinkedInUrl))
+    {
+        <div class="home-hero__social">
+            <a href="@Model.LinkedInUrl" class="home-hero__social-icon-link">
+                <img src="/wwwroot/uiweb/assets/png/linkedin-ico.png"
+                     alt="icon"
+                     class="home-hero__social-icon" />
+            </a>
+        </div>
+    }
+    @if (!string.IsNullOrEmpty(Model.GithubUrl))
+    {
+        <div class="home-hero__social">
+            <a href="@Model.GithubUrl" class="home-hero__social-icon-link">
+                <img src="/wwwroot/uiweb/assets/png/github-ico.png"
+                     alt="icon"
+                     class="home-hero__social-icon" />
+            </a>
+        </div>
+    }
+    @if (!string.IsNullOrEmpty(Model.TwitterUrl))
+    {
+        <div class="home-hero__social">
+            <a href="@Model.TwitterUrl" class="home-hero__social-icon-link">
+                <img src="/wwwroot/uiweb/assets/png/twitter-ico.png"
+                     alt="icon"
+                     class="home-hero__social-icon" />
+            </a>
+        </div>
+    }
+
+    @if (!string.IsNullOrEmpty(Model.YoutubeUrl))
+    {
+        <div class="home-hero__social">
+            <a href="@Model.YoutubeUrl" class="home-hero__social-icon-link">
+                <img src="/wwwroot/uiweb/assets/png/yt-ico.png"
+                     alt="icon"
+                     class="home-hero__social-icon" />
+            </a>
+        </div>
+    }
+    
+</div>

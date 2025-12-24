@@ -1,0 +1,83 @@
+﻿@model List<MyPortfolio.Models.Project>
+
+<section id="projects" class="projects sec-pad">
+    <div class="main-container">
+        <h2 class="heading heading-sec heading-sec__mb-bg">
+            <span class="heading-sec__main">Projelerim</span>
+            <span class="heading-sec__sub">
+                Yavuz Yazıcı - Ben tarafından yapılan efsane ve önerilere açık projeler.
+            </span>
+        </h2>
+
+        <div class="projects__content">
+            @foreach (var project in Model)
+            {
+                <div class="projects__row">
+                    <div class="projects__row-img-cont">
+                        <img src="@project.ImageUrl"
+                             alt="Software Screenshot"
+                             class="projects__row-img"
+                             loading="lazy" style="border-radius:70px" />
+                    </div>
+                    <div class="projects__row-content">
+                        <h3 class="projects__row-content-title">@project.Title</h3>
+                        <p class="projects__row-content-desc">
+                            @project.Description
+                        </p>
+                        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                            <a href="@project.SiteUrl"
+                               class="btn btn-site"
+                               style="padding: 10px 20px; background: #1565c0; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600;"
+                               target="_blank">🌐 Site</a>
+                            <a href="@project.GithubURL"
+                               class="btn btn-github"
+                               style="padding: 10px 20px; background: #24292f; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600;"
+                               target="_blank">💻 GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            }
+            <style>
+                .projects__row-buttons {
+                    display: flex;
+                    gap: 15px;
+                    flex-wrap: wrap;
+                }
+
+                .btn {
+                    display: inline-block;
+                    padding: 16px 32px;
+                    font-size: 1.1rem;
+                    border-radius: 10px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    position: relative;
+                    overflow: hidden;
+                    transition: all 0.45s cubic-bezier(.25,.8,.25,1);
+                }
+
+                .btn-site {
+                    background: #1565c0;
+                    color: #fff;
+                }
+
+                    .btn-site:hover {
+                        background: #0d47a1;
+                        transform: translateY(-3px) scale(1.05);
+                        box-shadow: 0 6px 15px rgba(21, 101, 192, 0.4);
+                    }
+
+                .btn-github {
+                    background: #24292f;
+                    color: #fff;
+                }
+
+                    .btn-github:hover {
+                        background: #000;
+                        transform: translateY(-3px) scale(1.05);
+                        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+                    }
+            </style>
+        </div>
+    </div>
+</section>

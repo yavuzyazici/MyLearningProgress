@@ -1,0 +1,19 @@
+﻿@model MyPortfolio.Models.Banner
+
+<section class="home-hero">
+    <div class="home-hero__content">
+        <h1 class="heading-primary">@Model.Title</h1>
+        <div class="home-hero__info">
+            <p class="text-primary">
+                @Model.Description
+            </p>
+        </div>
+        <div class="home-hero__cta">
+            <a href="#projects" class="btn btn--bg">Projelerim</a>
+        </div>
+    </div>
+    @Html.Action("BannerSocialPartial", "Home")
+    <div class="home-hero__mouse-scroll-cont">
+        <div class="mouse"></div>
+    </div>
+</section>

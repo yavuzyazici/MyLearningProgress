@@ -1,0 +1,21 @@
+﻿@model MyPortfolio.Models.About
+
+<section id="about" class="about sec-pad">
+    <div class="main-container">
+        <h2 class="heading heading-sec heading-sec__mb-med">
+            <span class="heading-sec__main">Yavuz Yazıcı Hakkında</span>
+        </h2>
+        <div class="about__content">
+            <div class="about__content-main">
+                <h3 class="about__content-title">@Model.KnowMeTitle</h3>
+                <div class="about__content-details">
+                    <p class="about__content-details-para">
+                        @Model.KnowMeDescription
+                    </p>
+                </div>
+                <a href="#contact" class="btn btn--med btn--theme dynamicBgClr">@Model.KnowMeButtonText</a>
+            </div>
+            @Html.Action("SkillsPartial", "Home")
+        </div>
+    </div>
+</section>

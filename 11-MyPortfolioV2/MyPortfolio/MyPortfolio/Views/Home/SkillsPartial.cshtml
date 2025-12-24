@@ -1,0 +1,11 @@
+﻿@model List<MyPortfolio.Models.Skills>
+
+<div class="about__content-skills">
+    <h3 class="about__content-title">Beceriler</h3>
+    <div class="skills">
+        @foreach (var skill in Model)
+        {
+            <div class="skills__skill">@skill.Title</div>
+        }
+    </div>
+</div>
